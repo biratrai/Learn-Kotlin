@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import com.example.gooner10.myactivity.SecondActivity.Companion.EXTRA_REPLY
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_second.*
 
 class FirstActivity : AppCompatActivity() {
     /**
@@ -24,6 +26,13 @@ class FirstActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        if (savedInstanceState != null) {
+            val reply = savedInstanceState.getString(EXTRA_REPLY)
+            editText_main.setText(reply)
+            val message = savedInstanceState.getString(EXTRA_MESSAGE)
+            text_message_reply.text = message
+        }
     }
 
     fun launchSecondActivity(view: View) {
@@ -55,5 +64,12 @@ class FirstActivity : AppCompatActivity() {
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        if (outState != null) {
+            outState.putString(EXTRA_REPLY, editText_main.text.toString())
+            outState.putString(EXTRA_MESSAGE, text_message_reply.text.toString())
+        }
+    }
 
 }

@@ -2,9 +2,10 @@ package com.example.gooner10.myactivity
 
 import android.app.Activity
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.View
+import com.example.gooner10.myactivity.FirstActivity.Companion.EXTRA_MESSAGE
 import kotlinx.android.synthetic.main.activity_second.*
 
 class SecondActivity : AppCompatActivity() {
@@ -23,8 +24,13 @@ class SecondActivity : AppCompatActivity() {
         // Get the intent that launched this activity, and the message in
         // the intent extra.
         val intent = intent
-        val message = intent.getStringExtra(FirstActivity.EXTRA_MESSAGE)
+        var message = intent.getStringExtra(FirstActivity.EXTRA_MESSAGE)
 
+        if (savedInstanceState != null) {
+            val reply = savedInstanceState.getString(EXTRA_REPLY)
+            editText_second.setText(reply)
+            message = savedInstanceState.getString(EXTRA_MESSAGE)
+        }
         // Put that message into the text_message TextView
         text_message.text = message
     }
@@ -39,5 +45,13 @@ class SecondActivity : AppCompatActivity() {
         replyIntent.putExtra(EXTRA_REPLY, reply)
         setResult(Activity.RESULT_OK, replyIntent)
         finish()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        if (outState != null) {
+            outState.putString(EXTRA_REPLY, editText_second.text.toString())
+            outState.putString(EXTRA_MESSAGE, text_message.text.toString())
+        }
     }
 }
