@@ -1,5 +1,7 @@
 package com.example.gooner10.kotlintest
 
+import java.lang.IllegalArgumentException
+
 /**
  * Utility class for SimpleCalc to perform the actual calculations.
  */
@@ -28,6 +30,9 @@ class Calculator {
      * Divide operation
      */
     fun div(firstOperand: Double, secondOperand: Double): Double {
+        if (secondOperand == 0.0) {
+            throw ArithmeticException("You cannot divide by zero")
+        }
         return firstOperand / secondOperand
     }
 
