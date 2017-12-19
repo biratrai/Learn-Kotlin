@@ -6,44 +6,44 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".FirstActivity">
+    tools:context=".SecondActivity">
 
     <TextView
-        android:id="@+id/text_header_reply"
+        android:id="@+id/text_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:text="@string/text_header_reply"
+        android:text="@string/text_header"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="bold"
-        android:visibility="invisible" />
+        android:textStyle="bold" />
+
 
     <TextView
-        android:id="@+id/text_message_reply"
+        android:id="@+id/text_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text_header_reply"
+        android:layout_below="@+id/text_header"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:visibility="invisible" />
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
-        android:id="@+id/button_main"
+        android:id="@+id/button_second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="launchSecondActivity"
-        android:text="@string/button_main" />
+        android:onClick="returnReply"
+        android:text="@string/button_second" />
 
     <EditText
-        android:id="@+id/editText_main"
+        android:id="@+id/editText_second"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/button_main"
-        android:layout_toStartOf="@+id/button_main"
-        android:hint="@string/editText_main" />
+        android:layout_toLeftOf="@+id/button_second"
+        android:layout_toStartOf="@id/button_second"
+        android:hint="@string/editText_second" />
+
 </RelativeLayout>

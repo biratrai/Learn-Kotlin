@@ -1,3 +1,25 @@
 <resources>
+    <!-- Title of app -->
     <string name="app_name">MyActivity</string>
+
+    <!-- Title of second activity -->
+    <string name="activity2_name">Second Activity</string>
+
+    <!-- Message header text (in second activity) [CHAR LIMIT=30]-->
+    <string name="text_header">Message Received</string>
+
+    <!-- Button label in main activity [CHAR LIMIT=10]-->
+    <string name="button_main">Send</string>
+
+    <!-- Hint for message edit text in main activity [CHAR LIMIT=30]-->
+    <string name="editText_main">Enter Your Message Here</string>
+
+    <!-- Button label in second activity [CHAR LIMIT=10]-->
+    <string name="button_second">Reply</string>
+
+    <!-- Hint for reply edit text in second activity [CHAR LIMIT=30]-->
+    <string name="editText_second">Enter Your Reply Here</string>
+
+    <!-- Reply header text in main activity [CHAR LIMIT=30]-->
+    <string name="text_header_reply">Reply Received</string>
 </resources>
